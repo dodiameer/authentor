@@ -1,0 +1,54 @@
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.title {
+    background-color: rgb(87, 188, 255);
+    color: black;
+    width: fit-content;
+    padding: 6px;
+    border: 3px solid black;
+}
+
+input.wide {
+    background-color: rgb(87, 188, 255);
+    color: black;
+    width: 200px;
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: 3px solid black;
+}
+
+::placeholder {
+    color: black;
+    opacity: 0.95;
+}
+
+.button {
+    display: inline-block;
+    background-color: rgb(87, 188, 255);
+    color: black;
+    padding: 6px;
+    border: 3px solid black;
+}
+.success-message {
+    color:black;
+    background-color: rgb(81, 255, 96);
+    font-size: 16px;
+    width: fit-content;
+    padding: 6px;
+    border: 3px solid black;
+}
+
+.fail-message {
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    width: fit-content;
+    padding: 6px;
+    border: 3px solid black;
+}

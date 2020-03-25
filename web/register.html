@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Authentor - Register</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="favicon.ico" />
+        <script type="text/javascript" src="eel.js"></script>
+        <script>
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.addEventListener("keydown", function(e) {
+                if (e.keyCode == 83 && (navigator.platform .match("Mac")? e.metaKey : e.ctrlKey)) {
+                    e.preventDefault();
+                    // Process event...
+                }
+                }, false);
+            document.addEventListener("keydown", function(e) {
+            if (e.keyCode == 87 && (navigator.platform .match("Mac")? e.metaKey : e.ctrlKey)) {
+                e.preventDefault();
+                // Process event...
+            }
+            }, false);
+        </script>
+        <script>
+            eel.expose(inputSender);
+            function inputSender() {
+                var username = document.getElementById("usernameBox").value;
+                var password = document.getElementById("passwordBox").value;
+                eel.register(username, password);
+            }
+            eel.expose(receiver);
+            function receiver(arg1) {
+                if(arg1 == "true") {
+                    document.getElementById("message").className = "center success-message";
+                    document.getElementById("message").innerHTML = "Successfully registered!";
+                }
+                
+                else {
+                    document.getElementById("message").className = "center fail-message";
+                    document.getElementById("message").innerHTML = "Username already used! try again."
+                }
+             }
+        </script>
+    </head>
+    <body style="background-color: whitesmoke;">
+        <div class="center">
+            <h1 class="title center">Authentor - Register</h1>
+            <input id="usernameBox" class="wide" placeholder="Username"> <br><br>
+            <input id="passwordBox" class="wide" type="password" placeholder="Password"> <br><br>
+            <a href="javascript:void()" onclick="inputSender()" class="button">Register</a> <br><br>
+            <a href="main.html" class="button">Have an account? Login</a>
+            <p id="message" class="center"></p>
+        </div>
+    </body>
+</html>
