@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+            
+                var url = 'http://127.0.0.1:5001/GUI-is-still-open'; 
+                fetch(url, { mode: 'no-cors'});
+                setInterval(function(){ fetch(url, { mode: 'no-cors'});}, 5000)();
+            
+            });
+            
+        </script>
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>
